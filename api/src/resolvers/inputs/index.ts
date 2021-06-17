@@ -1,0 +1,1 @@
+export { AllianceInput } from "./AllianceInput";

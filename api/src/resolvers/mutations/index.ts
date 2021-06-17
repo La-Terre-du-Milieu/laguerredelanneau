@@ -1,0 +1,1 @@
+export { AllianceMutation } from "./AllianceMutation";

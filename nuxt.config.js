@@ -10,22 +10,25 @@ export default {
 				// "@nuxt/babel-preset-app"
 			],
 			plugins: [
-				["@babel/plugin-proposal-decorators", { legacy: false, decoratorsBeforeExport: true }],
-				["@babel/plugin-transform-flow-strip-types"],
+				["@babel/plugin-proposal-decorators", { legacy: true }],
+				"babel-plugin-dynamic-import-node",
+				"babel-plugin-transform-class-properties",
+				// "babel-plugin-transform-decorators-legacy",
+				"babel-plugin-transform-import-meta",
+				"babel-plugin-transform-typescript-metadata",
 				["@babel/plugin-proposal-class-properties", { loose: true }],
 				["@babel/plugin-proposal-private-methods", { loose: true }],
-				
-				["@babel/plugin-transform-runtime"],
-				
 				["@babel/plugin-syntax-class-properties"],
+				["@babel/plugin-transform-flow-strip-types"],
 				["@babel/plugin-transform-modules-commonjs"],
-				["babel-plugin-dynamic-import-node"],
-				["babel-plugin-transform-import-meta"],
-				["@babel/plugin-transform-typescript", {
-					strictMode: false,
-				}],
+				["@babel/plugin-transform-runtime"],
+				["@babel/plugin-transform-typescript", { strictMode: false }],
 			]
 		},
+
+		extend(config, ctx) {
+
+		}
 
 	},
 
@@ -78,6 +81,9 @@ export default {
 	},
 
 	serverMiddleware: [
-		"~/server-middleware/api",
+		{
+			path: "/api",
+			handler: "~/server-middleware/api",
+		},
 	]
 };

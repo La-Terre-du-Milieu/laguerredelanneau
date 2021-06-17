@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"lib": [
+			"ES2020",
+			"ESNext.AsyncIterable"
+		],
+		"rootDir": "./../",
+		"strict": true,
+		"outDir": "./build",
+		"esModuleInterop": true,
+		"baseUrl": "../node_modules",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"removeComments": true,
+		"allowSyntheticDefaultImports": true,
+		"allowUmdGlobalAccess": true
+	},
+	"exclude": [
+		"../node_modules/"
+	],
+	"include": [
+		"./src/**/*",
+		"./../assets/**/*"
+	],
+}
